@@ -7,7 +7,14 @@ import time
 
 # Create your views here.
 def login(request):
-    return HttpResponse("this is login page!")
+    if request.method == 'POST':
+        user = request.POST.get("user")
+        pwd = request.POST.get("pwd")
+
+        print(request.method, request.POST)
+        if user == "liutao" and pwd == "12345":
+            return HttpResponse("登录成功".encode())
+    return render(request, "login.html")
 
 
 def add(request):
