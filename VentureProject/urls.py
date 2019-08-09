@@ -19,14 +19,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from login import views as login_views
-from blog import views as blog_views
+from blog.views import hello
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login', login_views.login),
     # url(r'^add', login_views.add),
     url(r'^add2/(\d+)/(\d+)/$', login_views.add2),
-    url(r'^cache/', login_views.cache)
+    url(r'^cache/', login_views.cache),
+    url(r'^hello', hello),
 ]
 
 static_path = static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

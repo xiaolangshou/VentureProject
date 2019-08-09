@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    hello {{ name }}<br/>
+    {% for item in books %}
+     this is {{ item }}<br/>
+    {% endfor %}
+    <br/>
+    your name is {{ dict.name }} and your age is {{ dict.age }}<br/>
+    {% if dict.age > 90 %}
+    {% elif dict.age >= 70 and dict.age <= 80 %}
+    {% elif dict.age >= 60 and dict.age < 70 %}
+    {% else %}
+    {% endif %}
+
+    欢迎你 {{ remote_addr }}
+</body>
+</html>
