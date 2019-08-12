@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.cache import cache_page
+from django.contrib import messages
 
 import time
-
 
 # Create your views here.
 def login(request):
@@ -13,8 +13,9 @@ def login(request):
 
         print(request.method, request.POST)
         if user == "liutao" and pwd == "12345":
-            return HttpResponse("登录成功".encode())
-    return render(request, "login.html")
+            return render(request, "index.html")
+        else:
+            return render(request, "login.html")
 
 
 def add(request):
