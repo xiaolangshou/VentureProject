@@ -24,7 +24,9 @@ from blog.views import hello
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login', login_views.login),
-    # url(r'^add', login_views.add),
+    url(r'^index', login_views.index),
+    url(r'^home', login_views.home),
+    url(r'^logout', login_views.logout),
     url(r'^add2/(\d+)/(\d+)/$', login_views.add2),
     url(r'^cache/', login_views.cache),
     url(r'^hello', hello),
