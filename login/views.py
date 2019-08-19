@@ -10,13 +10,13 @@ import time
 
 # Create your views here.
 def login(request):
-    print(request.META)
+    # print(request.META)
     username = request.POST.get("username", "")
     password = request.POST.get("password", "")
     request.session["username"] = username
 
-    print(username, type(username))
-    print(password, type(password))
+    print('......................username = %s' % username)
+    print('......................password = %s' % password)
 
     if username == "liutao" and password == "12345":
         return HttpResponse("登录成功!")
